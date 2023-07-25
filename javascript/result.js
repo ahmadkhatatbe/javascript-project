@@ -8,7 +8,7 @@ let result = document.getElementById("result");
 let btnresult = document.getElementById("btnresult");
 
   let aa;
-  let arr = sessionStorage.getItem("user_answer");  
+  let arr = localStorage.getItem("user_answer");  
   arrabstract = JSON.parse(arr);
 
 

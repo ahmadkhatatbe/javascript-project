@@ -42,11 +42,10 @@ let len = arrdata.length;
 
     addqustion(arrdata[current], len);
 
-     
+      window.sessionStorage.getItem("load")
+   
   };
  
-
-
 };
 
 
@@ -117,9 +116,9 @@ function addqustion(obj, count) {
         current:current
     }
 
-userAnswers.push(answeredobj);
+ userAnswers.push(answeredobj);
 
- sessionStorage.setItem("user_answer", JSON.stringify(userAnswers));
+ localStorage.setItem("user_answer", JSON.stringify(userAnswers));
  
 
   

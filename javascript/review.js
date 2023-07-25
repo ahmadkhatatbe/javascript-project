@@ -11,7 +11,7 @@ x.onload = function () {
   const json = JSON.parse(x.responseText);
 
   let gg;
-  let arr = sessionStorage.getItem("user_answer");
+  let arr = localStorage.getItem("user_answer");
   gg = JSON.parse(arr);
   
 
