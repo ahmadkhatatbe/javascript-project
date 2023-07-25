@@ -13,7 +13,11 @@ let ht = ``;
 let current = 0;
 let rightanswer = 0;
 let wronganswer = 0;
-let re = 0;
+let flag=false;
+
+let datatest=localStorage.getItem("user")
+let gettest = JSON.parse(datatest);
+
 ///////////requestjson////////////////////
 let xmldata = new XMLHttpRequest();
 
@@ -31,7 +35,7 @@ let len = arrdata.length;
   submit.onclick = () => {
     let rightanswer = arrdata[current].correct;
 
-    re++;
+    flag=true
 
     current++;
 
@@ -96,7 +100,9 @@ function addqustion(obj, count) {
   
   }   else if (current === count) {
     let finish = document.getElementById("finish");
-
+    gettest[2]="0"
+    let set = JSON.stringify(gettest);
+localStorage.setItem("user", set);
     let btnresutl = document.getElementById("btnresult");
     namequ.remove();
     answers.remove();
@@ -105,6 +111,7 @@ function addqustion(obj, count) {
     finish.style.display = "block";
     btnresutl.onclick = () => {
       location.href = "/Pages/result.html";
+       
     };
   }
 
@@ -113,7 +120,8 @@ function addqustion(obj, count) {
         answer: chooseanswer,
         countright: rightanswer,
         countwrong: wronganswer,
-        current:current
+        current:current,
+        valid:flag
     }
 
  userAnswers.push(answeredobj);

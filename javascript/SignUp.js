@@ -84,7 +84,7 @@ password.addEventListener("keyup", function () {
 // let  mail =document.getElementById('mail')
 //  let  pass =document.getElementById('pass')
 let signUp = document.getElementById("sign-up");
-
+let valid="1";
 signUp.onclick = function () {
   if (
     document.getElementById("userstatus").style.color === "green" &&
@@ -96,7 +96,11 @@ signUp.onclick = function () {
       username: username.value,
       email: email.value,
       password: password.value,
+      flag:valid
+      
     };
+    
+   
 
     if (localStorage.users != null) {
       savedData = JSON.parse(localStorage.users);
@@ -104,7 +108,9 @@ signUp.onclick = function () {
       savedData = [];
     }
     //edited
+     
     savedData.push(obj);
+    
     localStorage.setItem("users", JSON.stringify(savedData));
   } else {
     window.alert("registration unsuccess");
@@ -159,6 +165,8 @@ loginButton.addEventListener("click", function (event) {
       window.location.assign("/Pages/home.html");
       let user = [];
       user.push(loggedInUser.username);
+      user.push(loggedInUser.email);
+       user.push(loggedInUser.flag);
       user.push(true);
       localStorage.setItem("user", JSON.stringify(user));
     } else {
