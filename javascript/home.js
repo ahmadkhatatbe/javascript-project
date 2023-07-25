@@ -26,7 +26,10 @@ if(JSON.parse(localStorage.getItem("user"))[3]) {
           alert("Quiz has been taken");
         };
     } else {
-     
+     btn_start_home.onclick = () => {
+       location.href = "/Pages/quiz.html";
+       
+     };
     } 
 
 } else {

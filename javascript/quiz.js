@@ -98,7 +98,20 @@ function addqustion(obj, count) {
   
   
   
-  }   else if (current === count) {
+  } else if(count==4){
+    let btnresutl = document.getElementById("btnresult");
+    namequ.remove();
+    answers.remove();
+    submit.remove();
+    btnresutl.style.display = "block";
+    finish.style.display = "block";
+    btnresutl.onclick = () => {
+      location.href = "/Pages/quiz.html";
+       
+    };
+
+  }  
+  else if (current === count) {
     let finish = document.getElementById("finish");
     gettest[2]="0"
     let set = JSON.stringify(gettest);
