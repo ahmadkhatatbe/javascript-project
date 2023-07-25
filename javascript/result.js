@@ -35,6 +35,7 @@ if (arrabstract[alen].countright > arrabstract[alen].countwrong) {
       arrabstract[alen].countwrong
     } </span></p>
 </div>
+
            `;
 }else if (arrabstract[alen].countright < arrabstract[alen].countwrong) {
     

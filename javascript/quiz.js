@@ -5,6 +5,8 @@ let selectelement = document.querySelectorAll(".answer");
 let answers = document.getElementById("answers");
 let namequ = document.getElementById("namequ");
 
+let message = document.getElementById("message");
+
 let userAnswers = [];
 let arrdata = [];
 let ht = ``;
@@ -89,24 +91,7 @@ function addqustion(obj, count) {
 
       answers.appendChild(label);
     }
-  if (current == 4) {
-    let finish = document.getElementById("finish");
-finish.innerHTML="IQ test"
-    let btnresutl = document.getElementById("btnresult");
-    namequ.remove();
-    answers.remove();
-    submit.remove();
-    btnresutl.style.display = "block";
-    finish.style.display = "block";
-    btnresutl.innerHTML="Next test"
-    btnresutl.onclick = () => {
-     current++
-     
-    
-
-
-    };
-  }
+  
   
   
   }   else if (current === count) {
@@ -122,6 +107,20 @@ finish.innerHTML="IQ test"
       location.href = "/result.html";
     };
   }
+
+
+ answeredobj = {
+        answer: chooseanswer,
+        countright: rightanswer,
+        countwrong: wronganswer,
+        current:current
+    }
+
+userAnswers.push(answeredobj);
+
+ sessionStorage.setItem("user_answer", JSON.stringify(userAnswers));
+ 
+
   
 }
 let chooseanswer;
@@ -132,21 +131,15 @@ function checkanswer(ranswer, count) {
   for (let i = 0; i < answers.length; i++) {
     if (answers[i].checked) {
       chooseanswer = answers[i].dataset.answer;
+
+    }else{
+      console.log(current);
+      message.innerHTML="Please choose the answer"
       
     } 
       
     }
- answeredobj = {
-        answer: chooseanswer,
-        countright: rightanswer,
-        countwrong: wronganswer,
-    }
 
-userAnswers.push(answeredobj);
-
-  localStorage.setItem("user_answer", JSON.stringify(userAnswers));
-  console.log(chooseanswer);
-  console.log(ranswer);
 
   if (ranswer === chooseanswer) {
     rightanswer++;
@@ -161,7 +154,12 @@ userAnswers.push(answeredobj);
 }
 
 
+document.addEventListener("DOMContentLoaded",function () {
+  
+addqustion(arrdata[current], len);
 
+
+})
 
 
 xmldata.open("GET", "data.json");
