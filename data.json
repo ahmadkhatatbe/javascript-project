@@ -1,0 +1,171 @@
+[
+    {
+        "question": "She ________ a book every week?",
+        "answer_0": "reads",
+        "answer_1": "readed",
+        "answer_2": "read",
+        "answer_3": "reading",
+        "correct": "reads"
+    },
+    {
+        "question": "Identify the synonym for the word happy?",
+        "answer_0": "sad",
+        "answer_1": "angry",
+        "answer_2": "joyful",
+        "answer_3": "tired",
+        "correct": "joyful"
+    },
+    {
+        "question": "What is the past tense of the verb go?",
+        "answer_0": "goed",
+        "answer_1": "gone",
+        "answer_2": "went",
+        "answer_3": "goen",
+        "correct": "went"
+    },
+    {
+        "question": "Which sentence is grammatically correct?",
+        "answer_0": "She don't like apples",
+        "answer_1": "He doesn't likes apples.",
+        "answer_2": "They doesn't like apples.",
+        "answer_3": "I don't like apples",
+        "correct": "I don't like apples"
+    },
+    {
+        "question": "Choose the correctly spelled word:",
+        "answer_0": "beggining",
+        "answer_1": "begining",
+        "answer_2": "beginning",
+        "answer_3": "beginnning",
+        "correct": "beginning"
+    },
+
+        {
+            "question": "If 5 dogs can catch 5 balls in 5 minutes, how many balls can 15 dogs catch in 15 minutes?",
+            "answer_0": "5",
+            "answer_1": "10",
+            "answer_2": "15",
+            "answer_3": "20",
+            "correct": "10"
+        },
+        {
+            "question": "If a cat is a mammal, and all mammals have lungs, what can we infer about cats?",
+            "answer_0": "Cats have lungs.",
+            "answer_1": "Cats do not have lungs.",
+            "answer_2": "Cats have gills",
+            "answer_3": "Cats have fins",
+            "correct": "Cats have lungs."
+        },
+        {
+            "question": "Which word is different from the others?",
+            "answer_0": "Happy",
+            "answer_1": "Joyful",
+            "answer_2": "Sad",
+            "answer_3": "Cheerful",
+            "correct": "Sad"
+        },
+        {
+            "question": "What is the missing number in this sequence: 3, 6, 9, __, 15, 18?",
+            "answer_0": "10",
+            "answer_1": "11",
+            "answer_2": "12",
+            "answer_3": "13",
+            "correct": "12"
+        },
+        {
+            "question": "What number comes next in the sequence: 2, 4, 6, 8, __",
+            "answer_0": "9",
+            "answer_1": "10",
+            "answer_2": "11",
+            "answer_3": "12",
+            "correct": "12"
+        },
+    {
+        "question": "which language runs in a web browser?",
+        "answer_0": "java",
+        "answer_1": "C",
+        "answer_2": "Paython",
+        "answer_3": "javaScript",
+        "correct": "javaScript"
+    },
+    {
+        "question": "what Css stands for?",
+        "answer_0": "Cascading Style sheet",
+        "answer_1": "Computer Style Sheets",
+        "answer_2": "Creative Style Sheets",
+        "answer_3": "Colorful Style Sheets",
+        "correct": "Creative Style Sheets"
+    },
+    {
+        "question": "what does HTML stand for?",
+        "answer_0": "Hyperlink and Text Markup Language",
+        "answer_1": "Hypertext Markup Language",
+        "answer_2": "Hyper Tool Markup Language",
+        "answer_3": "High Text Markup Language",
+        "correct": "Hypertext Markup Language"
+    },
+    {
+        "question": "Which CSS property is used to change the text color of an element?",
+        "answer_0": "text-color",
+        "answer_1": "color",
+        "answer_2": "font-color",
+        "answer_3": "text-style",
+        "correct": "color"
+    },
+    {
+        "question": "Which CSS property is used to change the text color of an element?",
+        "answer_0": "text-color",
+        "answer_1": "color",
+        "answer_2": "font-color",
+        "answer_3": "text-style",
+        "correct": "color"
+    },
+    {
+        "question": "Which programming language makes dynamic elements?",
+        "answer_0": "HTML",
+        "answer_1": "CSS",
+        "answer_2": "JavaScript",
+        "answer_3": "Python",
+        "correct": "JavaScript"
+    },
+    {
+        "question": "Which attribute is used to link an external CSS file to an HTML document?",
+        "answer_0": "href",
+        "answer_1": "src",
+        "answer_2": "link",
+        "answer_3": "style",
+        "correct": "href"
+    },
+    {
+        "question": "What does the HTTP stand for?",
+        "answer_0": "HyperText Transfer Protocol",
+        "answer_1": "HyperTransfer Text Protocol",
+        "answer_2": "HyperText Transfer Page",
+        "answer_3": "HyperText Transfer Pathway",
+        "correct": "HyperText Transfer Protocol"
+    },
+    {
+        "question": "which language runs in a web browser?",
+        "answer_0": "java",
+        "answer_1": "C",
+        "answer_2": "Paython",
+        "answer_3": "javaScript",
+        "correct": "javaScript"
+    },
+    {
+        "question": "Which CSS property is used to create space between the content and the border of an element?",
+        "answer_0": "margin",
+        "answer_1": "padding",
+        "answer_2": "border",
+        "answer_3": "spacing",
+        "correct": "padding"
+    },
+    {
+        "question": "What does the href attribute in <a> tag do?",
+        "answer_0": "Specifies the text content of the link.",
+        "answer_1": "Defines the URL or destination of the link.",
+        "answer_2": "Sets the color of the link text.",
+        "answer_3": "Determines the size of the link.",
+        "correct": "Defines the URL or destination of the link."
+    }
+]

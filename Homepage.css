@@ -1,0 +1,166 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+}
+
+.welcome {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+
+
+}
+
+.welcome h1 {
+    font-size: 80px;
+
+}
+
+.first-paragraph-left h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.paragraph2 h4 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.Programming-academy {
+    font-size: 30px;
+    color: #ff7900;
+}
+
+.first-section {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+
+}
+
+.first-paragraph-left {
+    width: 400px;
+    height: 300px;
+    background-color: #e9e9e9;
+    border-bottom-right-radius: 20px;
+
+}
+
+.firstparagraph {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.orange-img {
+    text-align: center;
+}
+
+.orange-img img {
+    width: 500px;
+    height: 300px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.second-section {
+    grid-column: 1/5;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.paragraph2 {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 20px;
+}
+
+
+.btn {
+    grid-column: 1/5;
+    display: grid;
+    justify-content: center;
+
+
+
+}
+
+.btn button {
+    background-color: #ff7900;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #ff7900;
+    font-size: 40px;
+}
+
+@media screen and (min-width:481px)and (max-width:769px) {
+    .first-paragraph-left {
+        width: 300px;
+    }
+
+    .orange-img img {
+        width: 300px;
+
+    }
+
+    .firstparagraph {
+        font-size: 20px;
+
+    }
+
+    .Programming-academy {
+        font-size: 30px;
+
+    }
+
+
+}
+
+@media screen and (max-width:481px) {
+    .welcome h1 {
+        font-size: 30px;
+    }
+
+
+    .first-section {
+        grid-column: 1/5;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 20px;
+
+
+    }
+
+    .first-paragraph-left h3 {
+        text-align: center;
+        font-size: 30px;
+        padding: 15px;
+    }
+
+    .orange-img img {
+        width: 90%;
+
+    }
+
+    .first-paragraph-left {
+        width: 90%;
+    }
+
+    .firstparagraph {
+        font-size: 15px;
+
+    }
+
+    .Programming-academy {
+        font-size: 15px;
+
+    }
+
+
+}
