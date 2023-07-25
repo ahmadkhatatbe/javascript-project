@@ -2,36 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/cccdab20bd.js" crossorigin="anonymous"></script> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/CSS/Homepage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="/CSS/Homepage.css">
-  <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Quizat Homepage</title>
+    <style>
+        .navbar {
+            background-color: black;
+        }
+
+        .navbar-nav {
+            gap: 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: bold;
+            background-color: rgb(158, 156, 156);
+            border-radius: 10px;
+            height: 43px;
+
+        }
+
+        .nav-link:hover {
+            background-color: rgb(81, 81, 81);
+            color: chocolate;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- //navigatin bar -->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="#">
+            <img src="../Images/orange.png" alt="logo" style="width:80px;">
+            <span style="color: white; font-size: 1.5rem; margin-left: 10px;">Quizat</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <h2 id="welcome"></h2>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="signin" href="#">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="signup" href="#">Sign up</a>
+                </li>
+                <li class="nav-item">
 
-    <nav>
-        <div class="logo">
-            <img src="/img/Orange_logo.svg.png" alt="">
-            <h1>quizat</h1>
+                    <a class="nav-link" id="logout" href="#">Logout</a>
+                </li>
+            </ul>
+
         </div>
-
-        <ul id="navbar">
-            <li><a href="#" class="links">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-        <i class="fas fa-bars" id="icon" onclick="navigation()"></i>
     </nav>
-
 
     <div class="container">
         <div class="welcome">
 
-            <h1>Welcome ,Raghad Taha</h1>
+            <h1 id="welocme"></h1>
             <p class="Programming-academy">To Orange Programming Academy</p>
 
         </div>
@@ -41,10 +78,10 @@
                 <h3>Employment Training</h3>
                 <p class="firstparagraph">The first academy of its kind in the Middle East that provides young people
                     with free world-class training in programming languages and the skills needed
-                    to enter the job market</p>
+                    to enter the job market.</p>
             </div>
             <div class="orange-img">
-                <img src="/Images/Coding.png" alt="orange-academy-image">
+                <img src="../Images/Coding.png" alt="orange-academy-image">
             </div>
         </div>
 
@@ -52,32 +89,31 @@
             <div class="paragraph2">
                 <h4>position :Full Stack Web Development Trainee</h4>
                 <p class="secondparagraph">
-                    1-The quiz have 20 questions. <br><br>
-                    2- You have to complete the quiz in 20 minutes. <br><br>
-                    3-The quiz will show one question at a time. <br><br>
-                    4-The quiz page will be start with English test which contain 25% from the whole questions. <br><br>
-                    While, IQ test contain 25% from the whole questions. <br><br>
-                    Finally, the technical test will contain 50% from the whole questions. <br><br>
-                    5-The user can't move to the next question before selecting a choice of the answers options. and
-                    only
-                    once choice can be selected.
+                <h3>Quiz Guide:</h3>
+                1-The quiz have 20 questions. <br><br>
+                2- You have to complete the quiz in 20 minutes. <br><br>
+                3-The quiz will show one question at a time. <br><br>
+                4-The quiz page will be start with English test which contain 25% from the whole questions. <br><br>
+                While, IQ test contain 25% from the whole questions. <br><br>
+                Finally, the technical test will contain 50% from the whole questions. <br><br>
+                5-The user can't move to the next question before selecting a choice of the answers options.
+                and only once choice can be selected.
                 </p>
             </div>
 
 
         </div>
-        <form action="../pages/quiz.html">
-           <button class="btn" id="btn">start quiz</button>
-       
-</form>
-
+        <div class="btn">
+            <form action="/Pages/quiz.html"><button>Start Quiz</button></form>
+        </div>
     </div>
 
-
-
-
     <script src="/javascript/home.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/cccdab20bd.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
