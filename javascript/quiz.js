@@ -2,11 +2,7 @@ let startquiz = document.getElementById("btn-start");
 let quizheader = document.getElementById("quiz-header");
 let submit = document.getElementById("submit");
 let selectelement = document.querySelectorAll(".answer");
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-let login = document.getElementById("login");
 let answers = document.getElementById("answers");
-
 let namequ = document.getElementById("namequ");
 
 let userAnswers = [];
