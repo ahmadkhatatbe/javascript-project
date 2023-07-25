@@ -15,6 +15,24 @@ let rightanswer = 0;
 let wronganswer = 0;
 let flag=false;
 
+
+
+
+
+// Function to load the quiz question from local storage (if available)
+    function loadQuizFromLocalStorage() {
+      const storedIndex = sessionStorage.getItem("current_question_index");
+      if (storedIndex !== null) {
+        current = parseInt(storedIndex, 10);
+        addqustion(arrdata[current], arrdata.length);
+      }
+    }
+    
+ // Function to save the current question index to local storage
+  function saveCurrentQuestionIndex() {
+    sessionStorage.setItem("current_question_index", current.toString());
+  }
+  
 let datatest=localStorage.getItem("user")
 let gettest = JSON.parse(datatest);
 
@@ -22,20 +40,16 @@ let gettest = JSON.parse(datatest);
 let xmldata = new XMLHttpRequest();
 
 xmldata.onload = function () {
-  
   arrdata = JSON.parse(this.responseText);
-  
 
-let len = arrdata.length;
-  
+  let len = arrdata.length;
 
- addqustion(arrdata[current], len);
-
+  addqustion(arrdata[current], len);
 
   submit.onclick = () => {
     let rightanswer = arrdata[current].correct;
 
-    flag=true
+    flag = true;
 
     current++;
 
@@ -45,14 +59,15 @@ let len = arrdata.length;
     answers.innerHTML = ``;
 
     addqustion(arrdata[current], len);
-
-      window.sessionStorage.getItem("load")
+ saveCurrentQuestionIndex();
    
   };
  
 };
 
-
+window.onload = function () {
+    loadQuizFromLocalStorage();
+  };
 
 function addqustion(obj, count) {
   if (current < count) {
@@ -95,9 +110,10 @@ function addqustion(obj, count) {
 
       answers.appendChild(label);
     }
-  
-  
-  
+
+    
+
+    
   } else if(count==4){
     let btnresutl = document.getElementById("btnresult");
     namequ.remove();
