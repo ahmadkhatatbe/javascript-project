@@ -6,27 +6,56 @@ let containerresult = document.getElementById("containerresult");
 let finish = document.getElementById("finish");
 let result = document.getElementById("result");
 
+
   let aa;
   let arr = localStorage.getItem("user_answer");  
-  aa = JSON.parse(arr);
+  arrabstract = JSON.parse(arr);
 
 
-  let alen = aa.length - 1;
+  let alen = arrabstract.length - 1;
+  let counteright = Math.floor(arrabstract[alen].countright*0.05*100)
+  let counterwrong = Math.floor(arrabstract[alen].countwrong * 0.05 * 100);
+counterwrong=100-counterwrong
 
+if (arrabstract[alen].countright > arrabstract[alen].countwrong) {
+ 
       htresult = `
       
-            <h2 class="label">Your Result is there</h2>
+        <h2 class="label">Your Result is there</h2>
 <img src="" alt="">
-<h3 id="h3result">You Faild!</h3>
+<h3 id="h3result" style="color:green">You pass!</h3>
 <p>YOUR OVERALL SCORE</p>
-<P id="percentresult">40% LOW</P>
+<P id="percentresult">${counteright + " %"}</P>
+<P>"PERFECT"</P>
+<div class="footercontainer">
+    <p style="color:green">Correct answers <span class="correctreuslt" id="correctresult" >${
+      arrabstract[alen].countright
+    } </span></p>
+    <p style="color:red">Wrong answer <span class="core" id="incorrectresult" > ${
+      arrabstract[alen].countwrong
+    } </span></p>
+</div>
+           `;
+}else if (arrabstract[alen].countright < arrabstract[alen].countwrong) {
+    
+  htresult = `
+      
+        <h2 class="label">Your Result is there</h2>
+<img src="" alt="">
+<h3 id="h3result" style="color:red">You Faild!</h3>
+<p>YOUR OVERALL SCORE</p>
+<P id="percentresult">${counterwrong + " %"}</P>
 <P>"GOOD LUCK"</P>
 <div class="footercontainer">
-    <p>Correct answers <span class="correctreuslt" id="correctresult" >${aa[alen].countright} </span></p>
-    <p>Wrong answer <span class="core" id="incorrectresult"> ${aa[alen].countright} </span></p>
+    <p style="color:green">Correct answers <span class="correctreuslt" id="correctresult" >${
+      arrabstract[alen].countright
+    } </span></p>
+    <p style="color:red">Wrong answer <span class="core" id="incorrectresult" > ${
+      arrabstract[alen].countwrong
+    } </span></p>
 </div>
-           `
-    
+           `;
+}
 result.innerHTML=htresult
    
   

@@ -49,60 +49,78 @@ let len = arrdata.length;
 
 
 function addqustion(obj, count) {
-  if(current<count){
+  if (current < count) {
+    let divtitle = document.createElement("div");
+
+    let titlequ = document.createElement("h2");
+
+    quizheader.appendChild(divtitle);
+
+    let titletxt = document.createTextNode(obj["question"]);
+
+    titlequ.appendChild(titletxt);
+
+    namequ.appendChild(titlequ);
+
+    for (let i = 0; i < 4; i++) {
+      let div = document.createElement("div");
+
+      answers.className = "answer";
+
+      let input = document.createElement("input");
+
+      input.name = "question";
+
+      input.type = "radio";
+
+      input.id = `answer${i}`;
+
+      input.dataset.answer = obj[`answer_${i}`];
+
+      let label = document.createElement("label");
+
+      label.htmlFor = `answer${i}`;
+
+      let labeltxt = document.createTextNode(obj[`answer_${i}`]);
+
+      label.appendChild(labeltxt);
+
+      answers.appendChild(input);
+
+      answers.appendChild(label);
+    }
+  if (current == 4) {
+    let finish = document.getElementById("finish");
+finish.innerHTML="IQ test"
+    let btnresutl = document.getElementById("btnresult");
+    namequ.remove();
+    answers.remove();
+    submit.remove();
+    btnresutl.style.display = "block";
+    finish.style.display = "block";
+    btnresutl.innerHTML="Next test"
+    btnresutl.onclick = () => {
+     current++
+     
     
-  let divtitle = document.createElement("div");
 
-  let titlequ = document.createElement("h2");
 
-  quizheader.appendChild(divtitle);
-
-  let titletxt = document.createTextNode(obj["question"]);
-
-  titlequ.appendChild(titletxt);
-
-  namequ.appendChild(titlequ);
-
-  for (let i = 0; i < 4; i++) {
-
-    let div = document.createElement("div");
-
-    answers.className = "answer";
-
-    let input = document.createElement("input");
-
-    input.name = "question";
-
-    input.type = "radio";
-
-    input.id = `answer${i}`;
-
-    input.dataset.answer = obj[`answer_${i}`];
-
-    let label = document.createElement("label");
-
-    label.htmlFor = `answer${i}`;
-
-    let labeltxt = document.createTextNode(obj[`answer_${i}`]);
-
-    label.appendChild(labeltxt);
-
-    answers.appendChild(input);
-
-    answers.appendChild(label);
-
-  }}else if (current === count) {
+    };
+  }
+  
+  
+  }   else if (current === count) {
     let finish = document.getElementById("finish");
 
-    let btnresutl = document.getElementById("btnresult"); 
-     namequ.remove();
-     answers.remove();
-     submit.remove();
-     btnresutl.style.display = "block";
-     finish.style.display = "block";
-     btnresutl.onclick=()=>{
-      location.href="/result.html"
-     }
+    let btnresutl = document.getElementById("btnresult");
+    namequ.remove();
+    answers.remove();
+    submit.remove();
+    btnresutl.style.display = "block";
+    finish.style.display = "block";
+    btnresutl.onclick = () => {
+      location.href = "/result.html";
+    };
   }
   
 }
