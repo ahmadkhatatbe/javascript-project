@@ -4,6 +4,7 @@
     gap: 40px;
 }
 
+
 .welcome {
     grid-column: 1/5;
     display: grid;
@@ -22,12 +23,15 @@
 
 .first-paragraph-left h3 {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
+    padding: 20px 0;
+  
+    
 }
 
 .paragraph2 h4 {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .Programming-academy {
@@ -40,30 +44,39 @@
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-around;
+    margin: 100px 0;
+
 
 }
 
 .first-paragraph-left {
-    width: 400px;
+    width: 500px;
     height: 300px;
     background-color: #e9e9e9;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    line-height: 40px;
+    padding: 0 20px;
+    box-shadow: 5px 10px 5px 10px  #ff7900;
+   
+   
+   
 
 }
+
 
 .firstparagraph {
-    font-size: 25px;
-    padding: 10px;
+    font-size: 20px;
+    padding: 5px;
 }
 
-.orange-img {
-    text-align: center;
-}
+
 
 .orange-img img {
     width: 500px;
     height: 300px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px 10px  #888888;
+    
 
 }
 
@@ -72,6 +85,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -80,6 +94,12 @@
     padding: 20px;
     border-bottom-right-radius: 20px;
     font-size: 20px;
+    box-shadow: 5px 10px 5px 10px #888888;
+    
+}
+.paragraph2 h3{
+  text-decoration: underline;
+  margin: 15px;
 }
 
 
@@ -87,17 +107,37 @@
     grid-column: 1/5;
     display: grid;
     justify-content: center;
-
-
-
 }
 
 .btn button {
-    background-color: #ff7900;
-    border-bottom-right-radius: 20px;
-    border: 1px solid #ff7900;
+    background-color: #ff7900; 
     font-size: 40px;
+    margin-bottom: 20px;
+    color:white;
+    border: none;
+    padding: 20px;
+    border-radius: 50px;
+   
 }
+.btn button:hover{
+    color: black;
+    font-size: 45px;
+
+}
+.orange-img img:hover{
+    width: 520px;
+    height: 320px;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out; 
+}
+
+.first-paragraph-left:hover{
+    width: 520px;
+    height: 320px;
+   transition: 0.5s;
+    transition-timing-function: ease-in-out; 
+}
+
 
 @media screen and (min-width:481px)and (max-width:769px) {
     .first-paragraph-left {
@@ -110,7 +150,7 @@
     }
 
     .firstparagraph {
-        font-size: 20px;
+        font-size: 15px;
 
     }
 
@@ -123,6 +163,9 @@
 }
 
 @media screen and (max-width:481px) {
+    .container {
+        gap: 2px;
+    }
     .welcome h1 {
         font-size: 30px;
     }
@@ -132,28 +175,31 @@
         grid-column: 1/5;
         display: grid;
         grid-template-columns: auto;
-        gap: 20px;
+        gap: 10px;
 
 
     }
 
     .first-paragraph-left h3 {
         text-align: center;
-        font-size: 30px;
-        padding: 15px;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .orange-img img {
-        width: 90%;
+        width: 80%;
+        height: 45vh;
+        
 
     }
 
     .first-paragraph-left {
         width: 90%;
+       
     }
 
     .firstparagraph {
-        font-size: 15px;
+        font-size: 13px;
 
     }
 
@@ -161,6 +207,23 @@
         font-size: 15px;
 
     }
+    .paragraph2 {
+        font-size: 15px;
+    }
+    .btn button {
+        margin-top: 30px;
+       
+    }
 
 
+} 
+
+
+
+#welcome {
+    color: white;
+    font-size: 15px;
+    border: 2px solid #ff7900;
+    border-radius: 20px;
+    padding: 10px;
 }

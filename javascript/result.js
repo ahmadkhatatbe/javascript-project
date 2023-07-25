@@ -5,10 +5,10 @@ let incorrectresult = document.getElementById("incorrectresult");
 let containerresult = document.getElementById("containerresult");
 let finish = document.getElementById("finish");
 let result = document.getElementById("result");
-
+let btnresult = document.getElementById("btnresult");
 
   let aa;
-  let arr = localStorage.getItem("user_answer");  
+  let arr = sessionStorage.getItem("user_answer");  
   arrabstract = JSON.parse(arr);
 
 
@@ -34,6 +34,9 @@ if (arrabstract[alen].countright > arrabstract[alen].countwrong) {
     <p style="color:red">Wrong answer <span class="core" id="incorrectresult" > ${
       arrabstract[alen].countwrong
     } </span></p>
+    <form action="../pages/review.html">
+    <button id="btnResult">Review Answer</button>
+    </form>
 </div>
 
            `;
@@ -54,6 +57,9 @@ if (arrabstract[alen].countright > arrabstract[alen].countwrong) {
     <p style="color:red">Wrong answer <span class="core" id="incorrectresult" > ${
       arrabstract[alen].countwrong
     } </span></p>
+    <form action="../pages/review.html">
+    <button id="btnResult">Review Answer</button>
+    </form>
 </div>
            `;
 }

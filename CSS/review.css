@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: black;
+  }
+  .navbar-nav{
+      gap: 10px;
+  }
+  
+  
+  .navbar-toggler-icon {
+      background-color: white;
+  }
+
+  .nav-link {
+      color: white;
+      font-weight: bold;
+      background-color: rgb(158, 156, 156);
+      border-radius: 10px;
+      height: 43px;
+    
+  }
+  .nav-link:hover {
+      background-color: rgb(81, 81, 81);
+      color: chocolate;
+  }
+
+
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+
+
+
+.rivew-header {
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgb(100, 100, 100, 0.1);
+    overflow: hidden;
+    width: 80%;
+    box-shadow: 5px 5px 5px 5px  #FF7900;
+}
+
+.rivew-header h2 {
+    text-align: center;
+    padding: 20px 0;
+
+
+}
+.rivew-header h3{
+    padding-top: 30px;
+    /* text-align: center; */
+    font-size: 25px;
+    color: green;
+}
+.rivew-header h3 span{
+    color: #FF7900;
+}
+
+.rivew-header ul {
+    list-style-type: none;
+    
+}
+
+.rivew-header ul li label {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+    width:50%;
+    border-radius: 5px 10px 10px 5px;
+    padding: 0 10px;
+    
+}
+
+.rivew-header ul li {
+    padding: 10px 0;
+    display: flex;
+}
+
+
+
+
+@media screen and (min-width:481px) and (max-width:769px){
+    .rivew-header ul li label {
+        font-size: 15px;
+        /* width:80%; */
+    }
+
+    .rivew-header h3{
+        font-size: 20px;
+
+    }   
+
+    .rivew-header h3 span{
+        color: #FF7900;
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    
+    .todo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 100px 0; 
+        width: 100%;
+    }
+    
+    .rivew-header{
+        width: 90%;
+    }
+    .rivew-header{
+        padding:  10px 20px;
+    }
+    .rivew-header h2 {
+        padding: 20px 0;
+        font-size: 18px;
+    }
+
+    .rivew-header ul li label {
+        font-size: 15px;
+        width:90%;
+        
+    }
+
+    .rivew-header h3{
+        font-size: 20px;
+    }
+    .rivew-header h3 span{
+        color: #FF7900;
+        font-size: 15px;    
+    }
+    
+}

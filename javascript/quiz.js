@@ -18,6 +18,7 @@ let re = 0;
 let xmldata = new XMLHttpRequest();
 
 xmldata.onload = function () {
+  
   arrdata = JSON.parse(this.responseText);
   
 
@@ -104,7 +105,7 @@ function addqustion(obj, count) {
     btnresutl.style.display = "block";
     finish.style.display = "block";
     btnresutl.onclick = () => {
-      location.href = "/result.html";
+      location.href = "/Pages/result.html";
     };
   }
 
@@ -154,13 +155,8 @@ function checkanswer(ranswer, count) {
 }
 
 
-document.addEventListener("DOMContentLoaded",function () {
-  
-addqustion(arrdata[current], len);
 
 
-})
 
-
-xmldata.open("GET", "data.json");
+xmldata.open("GET", "/javascript/data.json");
 xmldata.send();
