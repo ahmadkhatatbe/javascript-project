@@ -5,6 +5,7 @@ body{
     grid-template-columns: auto auto auto auto;
     box-sizing: border-box;
 }
+
 .header{
     grid-column: 1/5;
     display: grid;
@@ -42,9 +43,9 @@ body{
     color: white;
     border: none;
     display: block;
-    width: 100%;
+    width: 220%;
     cursor: pointer;
-    padding: 20px;
+    padding: 30px;
 }
 
 .result{
@@ -121,6 +122,11 @@ border: solid 1px #FF7A00;
        
         grid-template-columns: auto ;
     
+    }
+
+    #btnResult
+    {
+        width: 100%;
     }
 
 
