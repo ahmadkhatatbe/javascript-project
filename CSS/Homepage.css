@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 40px;
+  
 }
 
 
@@ -35,7 +35,7 @@
 }
 
 .Programming-academy {
-    font-size: 30px;
+    font-size: 60px;
     color: #ff7900;
 }
 
@@ -112,7 +112,7 @@
 .btn button {
     background-color: #ff7900; 
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-top: 40px;
     color:white;
     border: none;
     padding: 20px;
@@ -155,17 +155,21 @@
     }
 
     .Programming-academy {
-        font-size: 30px;
+        font-size: 40px;
+        margin-top: 50px;
 
+    }
+    #btn_start_home{
+    margin-top: 40px;
     }
 
 
 }
 
 @media screen and (max-width:481px) {
-    .container {
+    /* .container {
         gap: 2px;
-    }
+    } */
     .welcome h1 {
         font-size: 30px;
     }
@@ -187,14 +191,18 @@
     }
 
     .orange-img img {
-        width: 80%;
-        height: 45vh;
+        max-width: 90%;
+        /* height: 45vh; */
+        
+        
         
 
     }
 
     .first-paragraph-left {
         width: 90%;
+        margin-bottom:40px ;
+        
        
     }
 
@@ -204,7 +212,8 @@
     }
 
     .Programming-academy {
-        font-size: 15px;
+        font-size: 20px;
+        margin-top: 40px;
 
     }
     .paragraph2 {
@@ -214,12 +223,11 @@
         margin-top: 30px;
        
     }
+   
+   
 
 
 } 
-
-
-
 #welcome {
     color: white;
     font-size: 15px;
@@ -227,3 +235,6 @@
     border-radius: 20px;
     padding: 10px;
 }
+
+
+

@@ -5,7 +5,6 @@ let selectelement = document.querySelectorAll(".answer");
 let answers = document.getElementById("answers");
 let namequ = document.getElementById("namequ");
 
-
 let message = document.getElementById("message");
 
 let userAnswers = [];
@@ -16,7 +15,19 @@ let rightanswer = 0;
 let wronganswer = 0;
 let flag = false;
 
+// // Function to load the quiz question from local storage (if available)
+// function loadQuizFromLocalStorage() {
+//   const storedIndex = sessionStorage.getItem("current_question_index");
+//   if (storedIndex !== null) {
+//     current = parseInt(storedIndex, 10);
+//     addqustion(arrdata[current], arrdata.length);
+//   }
+// }
 
+// // Function to save the current question index to local storage
+// function saveCurrentQuestionIndex() {
+//   sessionStorage.setItem("current_question_index", current.toString());
+// }
 
 let datatest = localStorage.getItem("user");
 let gettest = JSON.parse(datatest);
@@ -39,7 +50,7 @@ checkanswer(rightanswer, len);
 
     current++;
 
-    checkanswer(rightanswer);
+    checkanswer(rightanswer, len);
 
     namequ.innerHTML = ``;
     answers.innerHTML = ``;
@@ -48,9 +59,6 @@ checkanswer(rightanswer, len);
     // saveCurrentQuestionIndex();
   };
 };
-
-
-
 
 
 
@@ -67,7 +75,6 @@ function addqustion(obj, count) {
     titlequ.appendChild(titletxt);
 
     namequ.appendChild(titlequ);
-    
 
     for (let i = 0; i < 4; i++) {
       let div = document.createElement("div");
@@ -77,7 +84,7 @@ function addqustion(obj, count) {
       let input = document.createElement("input");
       input.name = "question";
       input.type = "radio";
-      input.checked = true;
+
       input.id = `answer${i}`;
 
       input.dataset.answer = obj[`answer_${i}`];
@@ -127,38 +134,58 @@ answers.appendChild(div)
 }
 let chooseanswer;
 
-function checkanswer(ranswer) {
+function checkanswer(ranswer, count) {
   let answers = document.getElementsByName("question");
 
   for (let i = 0; i < answers.length; i++) {
-    answers[i].checked = false;
-  }
 
-
-    for (let i = 0; i < answers.length; i++) {
-      answers[i].onclick = () => {
-        answers[i].checked = true;
-      };
-    }
-
-  for (let i = 0; i < answers.length; i++) {
-
-    if (answers[i].checked) {
-      
+    if (answers[i].checked ) {
+     
       chooseanswer = answers[i].dataset.answer;
 
     } else  {
       
-     
+      
     }
   }
   console.log(answers[1].checked);
-///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+
+  // for (let i = 0; i < answers.length; i++) {
+  //   if (answers[i].checked != true) {
+  //     chooseanswer = answers[i].dataset.answer;
+  //     submit.disabled = false;
+
+  //   } else {
+  //     //console.log(current);
+  //     message.innerHTML = "Please choose the answer";
+  //     submit.disabled = true;
+  //   }
+  // } 
 
 
+////////////////////////////////////////
+// function submitForm() {
+//   let chooseanswer = null;
+//   let allAnswersFilled = true;
+
+//   // Check if any of the answers are empty or not selected
+//   for (let i = 0; i < answers.length; i++) {
+//     if (answers[i].checked) {
+//       chooseanswer = answers[i].dataset.answer;
+//     } else {
+//       allAnswersFilled = false;
+//     }
+//   }
+//   if (!allAnswersFilled) {
+//     message.innerHTML =
+//       "Please choose an answer for all questions before submitting.";
+//     return;
+//   }
+// }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////
 
   if (ranswer === chooseanswer) {
     rightanswer++;
@@ -171,9 +198,8 @@ function checkanswer(ranswer) {
     console.log("badanswer");
   }
 }
-
-
-
-
+// window.onload = function () {
+//   loadQuizFromLocalStorage();
+// };
 xmldata.open("GET", "/javascript/data.json");
 xmldata.send();
