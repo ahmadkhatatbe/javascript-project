@@ -29,7 +29,7 @@ body
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgb(100, 100, 100,0.1);
     overflow: hidden;
-    width: 60%;
+    
 }
 .quiz-header
 {
@@ -75,4 +75,16 @@ button
     font-size: 30px;
     text-align: center;
 }
+.answer{
+    line-height: 50px;
+}
+.answer div:hover{
+    background-color: #FF7900;
+    transition: 0.4s;
 
+}
+@media screen and (max-width:481px) {
+    #namequ h2{
+        font-size: large;
+    }
+}

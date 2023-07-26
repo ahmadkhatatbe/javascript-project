@@ -13,7 +13,6 @@ x.onload = function () {
   let gg;
   let arr = localStorage.getItem("user_answer");
   gg = JSON.parse(arr);
-  
 
   for (let i = 0; i < json.length; i++) {
     const rivewHeader = document.createElement("div");
@@ -74,68 +73,73 @@ x.onload = function () {
     rivewHeader.appendChild(rivewspan);
     rivewspan.innerHTML = `<h3>The answer is: ( <span>${json[i].correct}</span> ) </h3>  `;
 
-    if (gg[i].answer == json[i].correct) {
-      console.log(json[i]);
+    // if (gg[i].answer == json[i].correct) {
+    //   console.log(json[i]);
 
-      if (gg[i].answer == json[i].answer_0) {
-        rivewLable.style.cssText = ` 
-                background:green;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_0) {
+    //     rivewLable.style.cssText = `
+    //             background:green;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_1) {
-        rivewLable_b.style.cssText = ` 
-                background:green;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_1) {
+    //     rivewLable_b.style.cssText = `
+    //             background:green;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_2) {
-        rivewLable_c.style.cssText = ` 
-                background:green;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_2) {
+    //     rivewLable_c.style.cssText = `
+    //             background:green;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_3) {
-        rivewLable_d.style.cssText = ` 
-                background:green;
-                color:#fff;
-                `;
-      }
-    } else {
-      if (gg[i].answer == json[i].answer_0) {
-        rivewLable.style.cssText = ` 
-                background:red;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_3) {
+    //     rivewLable_d.style.cssText = `
+    //             background:green;
+    //             color:#fff;
+    //             `;
+    //   }
+    // } else {
+    //   if (gg[i].answer == json[i].answer_0) {
+    //     rivewLable.style.cssText = `
+    //             background:red;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_1) {
-        rivewLable_b.style.cssText = ` 
-                background:red;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_1) {
+    //     rivewLable_b.style.cssText = `
+    //             background:red;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_2) {
-        rivewLable_c.style.cssText = ` 
-                background:red;
-                color:#fff;
-                `;
-      }
+    //   if (gg[i].answer == json[i].answer_2) {
+    //     rivewLable_c.style.cssText = `
+    //             background:red;
+    //             color:#fff;
+    //             `;
+    //   }
 
-      if (gg[i].answer == json[i].answer_3) {
-        rivewLable_d.style.cssText = ` 
-                background:red;
-                color:#fff;
-                `;
-      }
-    }
+    //   if (gg[i].answer == json[i].answer_3) {
+    //     rivewLable_d.style.cssText = `
+    //             background:red;
+    //             color:#fff;
+    //             `;
+    //   }
+    // }
 
     tbody.appendChild(rivewHeader);
   }
 };
 x.open("GET", "/javascript/data.json");
 x.send();
+
+let logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  window.location.assign("..Pages/SignUp.html");
+});
