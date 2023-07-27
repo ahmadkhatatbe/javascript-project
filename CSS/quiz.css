@@ -11,6 +11,12 @@ body
     margin: 0;
     height: 100vh;
     /* overflow: hidden; */
+
+}
+
+.containeractive{
+filter: blur(15px);
+
 }
 .timer{
     background-color: #fff;
@@ -29,6 +35,8 @@ body
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgb(100, 100, 100,0.1);
     overflow: hidden;
+
+    
     
 }
 .quiz-header
@@ -67,6 +75,16 @@ button
     cursor: pointer;
     padding: 20px;
 }
+.btnsubmit
+{
+    background-color:#FF7900;
+    color: white;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: auto;
+    padding: 20px;
+}
 .result{
     display: none;
 }
@@ -83,7 +101,23 @@ button
     transition: 0.4s;
 
 }
-@media screen and (max-width:481px) {
+
+.message{
+    position: absolute;
+    background-color: #F5F5F5;
+    display: none;
+    top: 250px;
+    width: 500px;
+    height: 300px;
+    
+
+}
+.active{
+ opacity: 1;
+}
+
+
+@media screen and (max-width:425px) {
     #namequ h2{
         font-size: large;
     }

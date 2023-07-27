@@ -141,5 +141,5 @@ x.send();
 
 let home = document.getElementById("Home");
 home.addEventListener("click", function () {
-  window.location.assign("../Pages/home.html");
+  window.location.assign("/Pages/home.html");
 });

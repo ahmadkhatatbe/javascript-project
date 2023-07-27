@@ -4,8 +4,11 @@ let submit = document.getElementById("submit");
 let selectelement = document.querySelectorAll(".answer");
 let answers = document.getElementById("answers");
 let namequ = document.getElementById("namequ");
-
-let message = document.getElementById("message");
+let btnnext = document.getElementById("btn-next");
+let pupmessage = document.querySelector(".message");
+let quizcontainer= document.querySelector(".container");
+let contentmessage = document.getElementById("contentmessage");
+let notanswer = document.getElementById("message");
 
 let userAnswers = [];
 let arrdata = [];
@@ -15,24 +18,34 @@ let rightanswer = 0;
 let wronganswer = 0;
 let flag = false;
 
-// // Function to load the quiz question from local storage (if available)
-// function loadQuizFromLocalStorage() {
-//   const storedIndex = sessionStorage.getItem("current_question_index");
-//   if (storedIndex !== null) {
-//     current = parseInt(storedIndex, 10);
-//     addqustion(arrdata[current], arrdata.length);
-//   }
-// }
-
-// // Function to save the current question index to local storage
-// function saveCurrentQuestionIndex() {
-//   sessionStorage.setItem("current_question_index", current.toString());
-// }
+let time = 20 * 60;
 
 let datatest = localStorage.getItem("user");
 let gettest = JSON.parse(datatest);
+function updateCountdown() {
+  // حساب الدقائق والثواني المتبقية
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
 
+  // إضافة أصفار مُسبقًا للثواني إذا كانت أقل من 10
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  // عرض الوقت المتبقي
+  const timerElement = document.getElementById("timer");
+  timerElement.textContent = `${minutes}:${seconds}`;
+
+  // إيقاف المؤقت عندما يصل الوقت إلى 0
+  if (time <= 0) {
+    clearInterval(countdownInterval);
+    alert("انتهى الوقت!");
+    location.href = "/Pages/result.html"; // يمكنك تغيير هذا لأي إجراء ترغب في تنفيذه بعد انتهاء الوقت
+  }
+
+  // تحديث الوقت بانتهاء كل ثانية
+  time--;
+}
 ///////////requestjson////////////////////
+const countdownInterval = setInterval(updateCountdown, 1000);
 let xmldata = new XMLHttpRequest();
 
 xmldata.onload = function () {
@@ -42,14 +55,16 @@ xmldata.onload = function () {
 
   addqustion(arrdata[current], len);
   
-checkanswer(rightanswer, len);
+
   submit.onclick = () => {
     let rightanswer = arrdata[current].correct;
 
     flag = true;
 
-    current++;
-
+    
+if (current === len - 1) {
+  clearInterval(countdownInterval);
+}
     checkanswer(rightanswer, len);
 
     namequ.innerHTML = ``;
@@ -57,8 +72,38 @@ checkanswer(rightanswer, len);
 
     addqustion(arrdata[current], len);
     // saveCurrentQuestionIndex();
+    message(current)
   };
 };
+
+
+function message(current) {
+  console.log(current);
+  if (current == 4) {
+submit.style.pointerEvents="none"
+    contentmessage.innerHTML="IQ test"
+    pupmessage.style.display="block"
+quizcontainer.style.filter="blur(15px)" ;
+    btnnext.onclick = () => {
+       pupmessage.style.display = "none";
+       quizcontainer.style.filter = "blur(0px)";
+submit.style.pointerEvents = "auto";
+
+    };
+  }
+  if (current == 9) {
+    submit.style.pointerEvents = "none";
+    contentmessage.innerHTML = "technical test";
+    pupmessage.style.display = "block";
+    quizcontainer.style.filter = "blur(15px)";
+    btnnext.onclick = () => {
+      pupmessage.style.display = "none";
+      quizcontainer.style.filter = "blur(0px)";
+      submit.style.pointerEvents = "auto";
+
+    };
+  }
+}
 
 
 
@@ -103,7 +148,9 @@ answers.appendChild(div)
       answers.appendChild(div);
 
     }
+
   
+
   } else if (current === count) {
     let finish = document.getElementById("finish");
     gettest[2] = "0";
@@ -140,51 +187,20 @@ function checkanswer(ranswer, count) {
   for (let i = 0; i < answers.length; i++) {
 
     if (answers[i].checked ) {
-     
       chooseanswer = answers[i].dataset.answer;
-
+      current++;
+       notanswer.innerHTML = "";
+      break;
     } else  {
-      
+      notanswer.innerHTML = "Please choose the answer";
+
       
     }
   }
   console.log(answers[1].checked);
 ////////////////////////////////////
 
-  // for (let i = 0; i < answers.length; i++) {
-  //   if (answers[i].checked != true) {
-  //     chooseanswer = answers[i].dataset.answer;
-  //     submit.disabled = false;
-
-  //   } else {
-  //     //console.log(current);
-  //     message.innerHTML = "Please choose the answer";
-  //     submit.disabled = true;
-  //   }
-  // } 
-
-
-////////////////////////////////////////
-// function submitForm() {
-//   let chooseanswer = null;
-//   let allAnswersFilled = true;
-
-//   // Check if any of the answers are empty or not selected
-//   for (let i = 0; i < answers.length; i++) {
-//     if (answers[i].checked) {
-//       chooseanswer = answers[i].dataset.answer;
-//     } else {
-//       allAnswersFilled = false;
-//     }
-//   }
-//   if (!allAnswersFilled) {
-//     message.innerHTML =
-//       "Please choose an answer for all questions before submitting.";
-//     return;
-//   }
-// }
-
-
+ 
 //////////////////////////////////////
 
   if (ranswer === chooseanswer) {
@@ -198,8 +214,14 @@ function checkanswer(ranswer, count) {
     console.log("badanswer");
   }
 }
-// window.onload = function () {
-//   loadQuizFromLocalStorage();
-// };
+
+
+ 
+  
+
+
+
+
+
 xmldata.open("GET", "/javascript/data.json");
 xmldata.send();
