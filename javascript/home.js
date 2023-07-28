@@ -15,10 +15,11 @@ let getuser = JSON.parse(user);
 if (JSON.parse(localStorage.getItem("user"))[3]) {
   signin.style.display = "none";
   signup.style.display = "none";
+  btn_get_home.style.display="none"
   logout.style.display = "block";
   welcome.style.display = "block";
   welcome.innerText = `Welcome ${JSON.parse(localStorage.getItem("user"))[0]}`;
-
+welcome.style.color="white"
   if (arr[2] === "0") {
     btn_start_home.onclick = () => {
       location.assign = "/Pages/home.html";
@@ -26,7 +27,7 @@ if (JSON.parse(localStorage.getItem("user"))[3]) {
     };
   } else {
     btn_start_home.onclick = () => {
-      window.location.href = "../Pages/quiz.html";
+      window.location.href = "/Pages/quiz.html";
     };
   }
 } else {
@@ -43,14 +44,14 @@ if (JSON.parse(localStorage.getItem("user"))[3]) {
 
 logout.addEventListener("click", function () {
   localStorage.setItem("user", JSON.stringify(["", false]));
-  window.location.assign("../Pages/SignUp.html");
+  window.location.href("../Pages/SignUp.html");
   // console.log(JSON.parse(localStorage.getItem("user"))[1]);
 });
 
 signin.addEventListener("click", function () {
-  window.location.assign("../pages/SignUp.html");
+  window.location.href("../Pages/SignUp.html");
 });
 
 signup.addEventListener("click", function () {
-  window.location.assign("../pages/SignUp.html");
+  window.location.href("../Pages/SignUp.html");
 });
