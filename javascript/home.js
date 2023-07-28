@@ -44,7 +44,7 @@ welcome.style.color="white"
 
 logout.addEventListener("click", function () {
   localStorage.setItem("user", JSON.stringify(["", false]));
-  window.location.href("../Pages/SignUp.html");
+  window.location.href("/Pages/SignUp.html");
   // console.log(JSON.parse(localStorage.getItem("user"))[1]);
 });
 
